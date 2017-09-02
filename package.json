@@ -1,0 +1,38 @@
+{
+  "name": "graphql-apollo-quickstart",
+  "author": "Stefan Pahlplatz",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "dev": "cross-env NODE_ENV=dev nodemon --exec babel-node src/index.js"
+  },
+  "dependencies": {
+    "apollo-server-express": "^1.1.2",
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "graphql": "^0.11.2",
+    "graphql-date": "^1.0.3",
+    "graphql-tools": "^1.2.2",
+    "http": "^0.0.0",
+    "jsonwebtoken": "^7.4.3",
+    "mongoose": "^4.11.9"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "cross-env": "^5.0.5",
+    "eslint": "^4.6.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.3.0",
+    "flow-bin": "^0.54.0",
+    "nodemon": "^1.11.0"
+  }
+}
