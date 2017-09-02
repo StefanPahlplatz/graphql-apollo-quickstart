@@ -21,8 +21,6 @@ GraphQLServer.listen(PORT, (err) => {
   if (err) {
     console.error(err);
   } else {
-    console.log('====================================');
-    console.log(`App started on PORT: ${PORT}`);
-    console.log('====================================');
+    console.log('\x1b[44m', `--- App started on PORT: ${PORT} ---`);
   }
 });

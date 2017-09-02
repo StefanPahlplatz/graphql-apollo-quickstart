@@ -10,20 +10,26 @@ import { MONGODB_URL } from './constants';
 function initializeDatabase() {
   mongoose.Promise = global.Promise;
 
-  mongoose.set('debug', true); // debug mode on
+  // debug mode on
+  mongoose.set('debug', true);
 
   try {
+    // Connect to the MongoDB server with the existing connection.
     mongoose.connect(MONGODB_URL, {
       useMongoClient: true,
     });
   } catch (err) {
+    // Create a new connection.
     mongoose.createConnection(MONGODB_URL, {
       useMongoClient: true,
     });
   }
 
+  // Open the connection.
   mongoose.connection
-    .once('open', () => console.log('MongoDB Running'))
+    .once('open', () => {
+      // Database connection opened succesfully.
+    })
     .on('error', (e) => {
       throw e;
     });

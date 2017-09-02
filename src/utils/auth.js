@@ -27,7 +27,7 @@ export async function requireAuth(user: Object) {
 /**
  * Checks if the token is valid or not.
  * @param {*string} token to decrypt.
- * @returns true if the token is valid.
+ * @returns the user object if the token is valid.
  */
 export function decodeToken(token: string) {
   const arr = token.split(' ');
