@@ -17,6 +17,11 @@ function initializeDatabase() {
     // Connect to the MongoDB server with the existing connection.
     mongoose.connect(MONGODB_URL, {
       useMongoClient: true,
+      server: {
+        auto_reconnect: true,
+        reconnectTries: Number.MAX_VALUE,
+        reconnectInterval: 1000,
+      },
     });
   } catch (err) {
     // Create a new connection.

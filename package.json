@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src/ -d lib/",
+    "start": "babel src/ -d lib/ && node ./lib/index.js",
     "dev": "cross-env NODE_ENV=dev nodemon --exec babel-node src/index.js"
   },
   "dependencies": {
