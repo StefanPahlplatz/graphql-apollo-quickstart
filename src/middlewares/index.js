@@ -12,7 +12,7 @@ import { GRAPHQL_PATH } from '../utils/constants';
 const schema = makeExecutableSchema({ typeDefs: GQLschema, resolvers });
 
 /**
- * Wrap the server in the middlewares.
+ * Wrap the server with the middlewares.
  * @param {*Object} app the express server you want to apply the middlewares to.
  */
 const applyMiddlewares = (app: Object) => {

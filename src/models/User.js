@@ -21,23 +21,35 @@ const UserSchema = new Schema(
   { timestamps: true },
 );
 
+// Pre save hook.
 UserSchema.pre('save', function userPreSave(next: Function) {
   // If the password is modified hash it again.
   if (this.isModified('password')) {
     this.password = this._hashPassword(this.password);
   }
-
   return next();
 });
 
+// Schema methods.
 UserSchema.methods = {
-  _hashPassword(password) {
+  /**
+   * Hash the password.
+   * @param {*string} password the unencrypted password.
+   */
+  _hashPassword(password: string): string {
     return hashSync(password);
   },
-  authenticate(password) {
+  /**
+   * Authenticate a user.
+   * @param {*string} password
+   */
+  authenticate(password: string): boolean {
     return compareSync(password, this.password);
   },
-  createToken() {
+  /**
+   * Create a token for a user.
+   */
+  createToken(): Object {
     return jwt.sign(
       {
         _id: this._id,
@@ -48,4 +60,5 @@ UserSchema.methods = {
 };
 
 const User = mongoose.model('User', UserSchema);
+
 export default User;

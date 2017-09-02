@@ -3,6 +3,8 @@
 import User from '../models/User';
 import { requireAuth } from '../utils/auth';
 
+const MIN_SEARCH_LENGTH = 2;
+
 export default {
   signup: async (_, { fullName, ...rest }) => {
     try {
@@ -21,12 +23,8 @@ export default {
     try {
       const user = await User.findOne({ username });
 
-      if (!user) {
-        throw new Error('USER_DOESNT_EXIST');
-      }
-
-      if (!user.authenticate(password)) {
-        throw new Error('WRONG_PASSWORD');
+      if (!user || !user.authenticate(password)) {
+        throw new Error('INVALID_CREDENTIALS');
       }
 
       return {
@@ -39,7 +37,7 @@ export default {
 
   search: async (_, { query }) => {
     try {
-      if (query.length < 3) {
+      if (query.length < MIN_SEARCH_LENGTH) {
         throw new Error('TOO_SHORT');
       }
 
