@@ -20,13 +20,13 @@ yarn dev
 Make sure you have a [MongoDB](https://www.mongodb.com/) server running.
 
 ## Application Structure
-```py
+```
 ├───lib/                # Transpiled js
 ├───src/                # Main souce folder
-│   ├───middlewares     # Middlewares (authentiction and routes)
-│   ├───models          # The models used by mongoose.
-│   ├───resolvers       # The logic for the GraphQl paths
-│   └───utils           # Helper functions
+│   ├───middlewares/    # Middlewares (authentiction and routes)
+│   ├───models/         # The models used by mongoose.
+│   ├───resolvers/      # The logic for the GraphQl paths
+│   └───utils/          # Helper functions
 ├───package.json        # Dependencies
 └───...                 # Configuration files
 ```
