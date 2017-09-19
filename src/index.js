@@ -1,4 +1,5 @@
 // @flow
+// eslint-ignore-no-console
 
 import express from 'express';
 import { createServer } from 'http';
@@ -17,6 +18,7 @@ middlewares(app);
 
 const GraphQLServer = createServer(app);
 
+// Start the server.
 GraphQLServer.listen(PORT, (err) => {
   if (err) {
     console.error(err);
