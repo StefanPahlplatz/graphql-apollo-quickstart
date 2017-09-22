@@ -17,6 +17,11 @@ A simple Apollo GraphQl starter kit.
 yarn 
 yarn dev
 ```
+or
+```
+npm
+npm run dev
+```
 Make sure you have a [MongoDB](https://www.mongodb.com/) server running.
 
 ## Application Structure
